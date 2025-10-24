@@ -16,6 +16,15 @@ Route::get('/', function () {
 Route::get('/careers', function () {
     return Inertia::render('Careers/Index');
 })->name('careers.index');
+
+Route::get('/about', function () {
+    return Inertia::render('About/Index');
+})->name('about.index');
+
+Route::get('/contact-us', function () {
+    return Inertia::render('Contact/Index');
+})->name('contact.index');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

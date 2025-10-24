@@ -64,8 +64,8 @@ export function HeroSection() {
     const currentItem = workItems[currentWork];
 
     return (
-        <section className="min-h-screen sm:min-h-[60vh] py-8 sm:py-12 flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center w-full">
+        <section className="min-h-screen w-full sm:min-h-[60vh] py-8 sm:py-12 flex items-center max-w-7xl mx-auto ">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center w-full ">
                 {/* Work Description Section - Left Side */}
                 <div className="space-y-6 lg:space-y-8">
                     {/* Work Navigation and Title */}

@@ -35,15 +35,29 @@ export default function GuestLayoutNavBar({ children }) {
     }, []);
 
     const Links = [
-        { name: "Home", href: "/", icon: Home },
-        { name: "About", href: "/about", icon: CircleHelp },
-        { name: "Services", href: "/services", icon: FileText },
+        {
+            name: "Home",
+            href: "/",
+            icon: Home },
+        {
+            name: "About",
+            href: route("about.index"),
+            icon: CircleHelp
+        },
+        {
+            name: "Services",
+            href: "/services",
+            icon: FileText },
         {
             name: "Careers",
             href: route("careers.index"),
             icon: ChevronRightCircle,
         },
-        { name: "Contact", href: "/contact", icon: Phone },
+        {
+            name: "Contact",
+            href: route("contact.index"),
+            icon: Phone
+        },
     ];
 
     const footerLinks = {
@@ -54,29 +68,24 @@ export default function GuestLayoutNavBar({ children }) {
             { name: "Support & Maintenance", href: "/services/support" },
         ],
         company: [
-            { name: "About Us", href: "/about" },
-            { name: "Our Team", href: "/team" },
-            { name: "Careers", href: route("careers.index") },
             { name: "Blog", href: "/blog" },
         ],
         legal: [
             { name: "Privacy Policy", href: "/privacy" },
             { name: "Terms of Service", href: "/terms" },
-            { name: "Cookie Policy", href: "/cookies" },
         ],
     };
 
     const isActive = (href) => {
-        // Handle root path
-        if (href === "/") return url === "/";
+        const hrefPath = href.startsWith('http') ? new URL(href).pathname : href;
 
-        // Handle named routes (like careers.index)
-        if (href.startsWith(route("careers.index"))) {
-            return url.startsWith("/careers");
-        }
+        const normalize = (path) => path.replace(/\/+$/, '') || '/';
+        const current = normalize(url);
+        const target = normalize(hrefPath);
 
-        // Handle exact matches for other routes
-        return url === href || url.startsWith(href);
+        if (target === '/') return current === '/';
+
+        return current === target || current.startsWith(target + '/');
     };
 
     return (
@@ -194,7 +203,7 @@ export default function GuestLayoutNavBar({ children }) {
             </header>
 
             {/* Page content */}
-            <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 pt-[90px]">
+            <main className="w-full  mx-auto px-4 sm:px-6 lg:px-8 py-6 pt-[90px]">
                 {children}
             </main>
             <Footer footerLinks={footerLinks} />

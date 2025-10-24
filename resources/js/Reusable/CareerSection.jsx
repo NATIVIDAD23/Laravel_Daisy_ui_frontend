@@ -1,7 +1,7 @@
 import { Briefcase, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Link } from '@inertiajs/react';
 
-export function CareerSectionSimple() {
+export function CareerSection() {
     const jobs = [
         {
             id: 1,
@@ -30,7 +30,7 @@ export function CareerSectionSimple() {
     ];
 
     return (
-        <section id="careers" className="py-16 lg:py-20 bg-white dark:bg-gray-900">
+        <section id="careers" className="py-16 lg:py-20 max-w-7xl mx-auto ">
             <div className="">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">

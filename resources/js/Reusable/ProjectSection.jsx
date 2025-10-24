@@ -2,7 +2,7 @@ import { ExternalLink, Github, Filter } from 'lucide-react';
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 
-export function ProjectsSectionSimple() {
+export function ProjectsSection() {
     const [activeCategory, setActiveCategory] = useState('all');
 
     const projects = [
@@ -51,8 +51,8 @@ export function ProjectsSectionSimple() {
         : projects.filter(project => project.category === activeCategory);
 
     return (
-        <section id="projects" className="py-16 lg:py-20 bg-white dark:bg-gray-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="projects" className="py-16 lg:py-20 ">
+            <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         Our Projects

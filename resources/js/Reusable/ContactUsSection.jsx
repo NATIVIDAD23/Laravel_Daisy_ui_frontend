@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle } from 'lu
 import { Link, useForm } from '@inertiajs/react';
 import { useState } from 'react';
 
-export function ContactSectionSimple() {
+export function ContactSection() {
     const [formSubmitted, setFormSubmitted] = useState(false);
 
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -60,7 +60,7 @@ export function ContactSectionSimple() {
     ];
 
     return (
-        <section id="contact" className="py-16 lg:py-24 ">
+        <section id="contact" className="py-16 lg:py-24 max-w-7xl mx-auto">
             <div>
                 {/* Header Section */}
                 <div className="text-center mb-16">

@@ -1,13 +1,13 @@
 import GuestLayoutNavBar from '@/Layouts/GuestLayoutNavBar';
-import { CareerSectionSimple } from '@/Reusable/CareerSection';
+import { CareerSection } from '@/Reusable/CareerSection';
 import { Head, Link } from '@inertiajs/react';
 
-export default function Welcome() {
+export default function Careers() {
     return (
         <>
             <GuestLayoutNavBar>
-                <Head title="Welcome" />
-                <CareerSectionSimple />
+                <Head title="Careers" />
+                <CareerSection />
 
             </GuestLayoutNavBar>
         </>

@@ -7,6 +7,7 @@ import { Building, Home, TerminalIcon, User } from 'lucide-react';
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
     const userInitials = user.name.split(' ').map(n => n[0]).join('').toUpperCase();
+    const company = usePage().props.company;
 
     const navigationLinks = [
         {
@@ -42,8 +43,8 @@ export default function AuthenticatedLayout({ header, children }) {
                 {/* Logo */}
                 <div className="flex items-center justify-center p-4 border-b border-base-300">
                     <Link href="/" className="flex items-center gap-2">
-                        <ApplicationLogo className="h-8 w-auto" />
-                        <span className="text-lg font-semibold">MyApp</span>
+                        {/* <ApplicationLogo logo={company.logo} /> */}
+                        <span className="text-lg font-semibold">{company.name}</span>
                     </Link>
                 </div>
 

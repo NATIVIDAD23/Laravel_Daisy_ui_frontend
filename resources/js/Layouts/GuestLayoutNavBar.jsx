@@ -96,7 +96,7 @@ export default function GuestLayoutNavBar({ children }) {
                 <nav
                     className={`navbar px-4 md:px-8 h-[72px] border-b transition-all duration-300 ease-in-out ${
                         scrolled
-                            ? "bg-gray-800/90 text-white dark:bg-gray-900/95 border-gray-400 dark:border-gray-700 shadow-lg"
+                            ? "bg-white/90 dark:bg-gray-900/80 border-white/20 backdrop-blur-md shadow-md"
                             : "bg-white/80 dark:bg-gray-900/80 border-white/20 backdrop-blur-md"
                     }`}
                 >
@@ -113,7 +113,7 @@ export default function GuestLayoutNavBar({ children }) {
                             />
                         </Link>
                     </div>
-                    
+
                     {/* Centered navigation links */}
                     <div className="hidden md:flex flex-1 justify-center">
                         <div className="flex items-center gap-1">

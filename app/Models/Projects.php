@@ -11,13 +11,14 @@ class Projects extends Model
 
     protected $fillable = [
         'title',
-        'slug',
+        'name',
         'project_type',
         'description',
         'image',
         'technologies',
         'advantages',
         'is_hide',
+        'client'
     ];
 
     /**

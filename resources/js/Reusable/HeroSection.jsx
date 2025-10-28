@@ -64,10 +64,25 @@ export function HeroSection() {
     const currentItem = workItems[currentWork];
 
     return (
-        <section className="min-h-screen w-full sm:min-h-[60vh] py-8 sm:py-12 flex items-center max-w-7xl mx-auto ">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center w-full ">
+        <section className="min-h-screen w-full sm:min-h-[60vh] py-8 sm:py-12 flex items-center max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center w-full">
                 {/* Work Description Section - Left Side */}
                 <div className="space-y-6 lg:space-y-8">
+                    <div className="absolute inset-0 -z-10 overflow-hidden">
+                        {/* Large Orange Circle */}
+                        <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-br from-[#ff8938] to-orange-500 rounded-full opacity-10 blur-xl"></div>
+
+                        {/* Medium Circle */}
+                        <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full opacity-10 blur-lg"></div>
+
+                        {/* Small Circle */}
+                        <div className="absolute top-1/2 -left-10 w-40 h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-15 blur-md"></div>
+
+                        {/* Floating Dots Pattern */}
+                        <div className="absolute top-10 right-10 w-4 h-4 bg-[#ff8938] rounded-full opacity-20"></div>
+                        <div className="absolute bottom-20 left-20 w-3 h-3 bg-[#ff8938] rounded-full opacity-30"></div>
+                    </div>
+
                     {/* Work Navigation and Title */}
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
@@ -150,8 +165,16 @@ export function HeroSection() {
                 {/* Phone Mockup Section - Right Side */}
                 <div className="flex justify-center lg:justify-end">
                     <div className="relative">
+                        <div className="absolute inset-0 -z-10">
+
+                            <div className="absolute -top-10 -right-10 w-96 h-96 bg-gradient-to-br from-[#ff8938]/20 to-orange-500/20 rounded-full blur-3xl"></div>
+
+
+                            <div className="absolute -bottom-5 -left-5 w-72 h-72 bg-gradient-to-br from-blue-500/15 to-cyan-500/15 rounded-full blur-2xl"></div>
+                        </div>
+
                         {/* Phone Mockup */}
-                        <div className="mockup-phone transform-gpu h-[50vh] min-h-[500px] sm:min-h-[700px] lg:min-h-[600px] lg:max-h-[700px] w-auto">
+                        <div className="mockup-phone transform-gpu h-[50vh] min-h-[500px] sm:min-h-[700px] lg:min-h-[600px] lg:max-h-[700px] w-auto relative z-10">
                             <div className="mockup-phone-camera outline outline-2 outline-offset-2 outline-gray-400"></div>
                             <div className="mockup-phone-display relative overflow-hidden h-full">
                                 <img
@@ -163,7 +186,6 @@ export function HeroSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-between">
                                     {/* Top Overlay */}
                                     <div className="p-4 text-white">
-
                                         <h3 className="text-lg font-bold">{currentItem.overlayTitle}</h3>
                                         <p className="text-xs opacity-90">{currentItem.overlaySubtitle}</p>
                                     </div>
@@ -192,11 +214,6 @@ export function HeroSection() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Floating Badge */}
-                        {/* <div className="absolute -top-2 -right-2 bg-[#ff8938] text-white px-3 py-1 rounded-full text-xs font-medium animate-pulse">
-                            Live Demo
-                        </div> */}
                     </div>
                 </div>
             </div>

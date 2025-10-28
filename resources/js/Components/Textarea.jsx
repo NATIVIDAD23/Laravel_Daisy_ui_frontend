@@ -1,9 +1,9 @@
-export function Input({ className = '', ...props }) {
+export function Textarea({ className = '', ...props }) {
     return (
-        <input
+        <textarea
             {...props}
             className={
-                'input ' +
+                'textarea ' +
                 className
             }
         />

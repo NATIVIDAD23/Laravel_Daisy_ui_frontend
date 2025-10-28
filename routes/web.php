@@ -40,6 +40,8 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/company-profile/{id}', [CompanyProfileController::class, 'update'])->name('company.update');
 
     Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+    Route::post('project', [ProjectController::class, 'store'])->name('project.store');
+    Route::post('project/{id}', [ProjectController::class, 'update'])->name('project.update');
 });
 
 require __DIR__.'/auth.php';

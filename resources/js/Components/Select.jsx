@@ -1,9 +1,9 @@
-export function Input({ className = '', ...props }) {
+export function Select ({ className = '', ...props }) {
     return (
-        <input
+        <select
             {...props}
             className={
-                'input ' +
+                'select ' +
                 className
             }
         />

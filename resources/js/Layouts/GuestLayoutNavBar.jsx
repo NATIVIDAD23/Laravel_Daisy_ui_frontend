@@ -14,7 +14,8 @@ import { Footer } from "./GuestFooter";
 export default function GuestLayoutNavBar({ children }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const { url, component } = usePage();
+    const { url } = usePage();
+    const { company } = usePage().props;
 
     useEffect(() => {
         const handleResize = () => {
@@ -103,14 +104,16 @@ export default function GuestLayoutNavBar({ children }) {
                     <div className="flex-none">
                         <Link
                             href="/"
-                            className="btn btn-ghost normal-case text-xl hover:scale-105 transition-transform duration-200"
+                            className="flex items-center gap-2 btn btn-link normal-case text-xl hover:scale-105 transition-transform duration-200"
                         >
-                            <span className="bg-gradient-to-r from-[#ff8938] to-orange-500 bg-clip-text text-transparent font-bold">
-                                MyBrand
-                            </span>
+                            <img
+                                src={company.logo}
+                                alt="Company Logo"
+                                className="h-30 md:h-30 lg:h-50 w-auto object-contain"
+                            />
                         </Link>
                     </div>
-
+                    
                     {/* Centered navigation links */}
                     <div className="hidden md:flex flex-1 justify-center">
                         <div className="flex items-center gap-1">
